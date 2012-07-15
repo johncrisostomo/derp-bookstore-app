@@ -13,7 +13,7 @@
         <asp:DetailsView ID="DetailsView1" runat="server" AutoGenerateRows="False" 
             CellPadding="4" DataKeyNames="au_id" DataSourceID="AccessDataSource1" 
             DefaultMode="Insert" ForeColor="#333333" GridLines="None" Height="50px" 
-            Width="125px">
+            Width="125px" OnItemInserted="DetailView_ItemInsert" OnItemCommand="DetailView_ItemCommand" >
             <AlternatingRowStyle BackColor="White" />
             <CommandRowStyle BackColor="#FFFFC0" Font-Bold="True" />
             <FieldHeaderStyle BackColor="#FFFF99" Font-Bold="True" />

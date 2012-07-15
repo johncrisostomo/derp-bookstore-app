@@ -33,6 +33,7 @@
             <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
             <SelectedRowStyle BackColor="#FFCC66" Font-Bold="True" ForeColor="Navy" />
         </asp:GridView>
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/AuthorInsert.aspx">Add New Author</asp:HyperLink>
         <asp:AccessDataSource ID="AccessDataSource1" runat="server" 
             DataFile="C:\Users\John\Documents\GitHub\derp-bookstore-app\db\mybookstore.accdb" 
             DeleteCommand="DELETE FROM `authors` WHERE `au_id` = ?" 
