@@ -13,6 +13,33 @@
     <p>
         <span lang="en-us">This page will show a list of Publishers.</span>
     </p>
+    <p>
+        <asp:DataList ID="DataList1" runat="server" DataKeyField="pub_id" 
+            DataSourceID="AccessDataSource1">
+            <ItemTemplate>
+                <asp:Label ID="pub_nameLabel" runat="server" Text='<%# Eval("pub_name") %>' Font-Italic=true />
+                <br />
+            </ItemTemplate>
+        </asp:DataList>
+        <asp:AccessDataSource ID="AccessDataSource1" runat="server" 
+            DataFile="C:\Users\John\Documents\GitHub\derp-bookstore-app\db\mybookstore.accdb" 
+            DeleteCommand="DELETE FROM `publishers` WHERE `pub_id` = ?" 
+            InsertCommand="INSERT INTO `publishers` (`pub_id`, `pub_name`) VALUES (?, ?)" 
+            SelectCommand="SELECT `pub_id`, `pub_name` FROM `publishers`" 
+            UpdateCommand="UPDATE `publishers` SET `pub_name` = ? WHERE `pub_id` = ?">
+            <DeleteParameters>
+                <asp:Parameter Name="pub_id" Type="Int16" />
+            </DeleteParameters>
+            <InsertParameters>
+                <asp:Parameter Name="pub_id" Type="Int16" />
+                <asp:Parameter Name="pub_name" Type="String" />
+            </InsertParameters>
+            <UpdateParameters>
+                <asp:Parameter Name="pub_name" Type="String" />
+                <asp:Parameter Name="pub_id" Type="Int16" />
+            </UpdateParameters>
+        </asp:AccessDataSource>
+    </p>
     </form>
 </body>
 </html>
