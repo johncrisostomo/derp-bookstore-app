@@ -25,7 +25,9 @@
                 <asp:BoundField DataField="au_fname" HeaderText="First Name" 
                     SortExpression="au_fname" ReadOnly="True" />
                 <asp:BoundField DataField="phone" HeaderText="Phone" SortExpression="phone" />
-                <asp:CommandField ShowEditButton="True" />
+                <asp:HyperLinkField DataNavigateUrlFields="au_id" 
+                    DataNavigateUrlFormatString="~/AuthorUpdate.aspx?au_id={0}" Text="Edit" />
+                <asp:CommandField ShowDeleteButton="True" />
             </Columns>
             <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
